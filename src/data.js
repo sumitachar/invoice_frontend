@@ -1,0 +1,97 @@
+
+
+const fakeCustomers = [
+  { id: 1, name: "John Doe", email: "john@example.com", address: "123 Main St, New York, NY" },
+  { id: 2, name: "Jane Smith", email: "jane@example.com", address: "456 Oak St, Los Angeles, CA" },
+  { id: 3, name: "Acme Corporation", email: "contact@acme.com", address: "789 Industrial Rd, Chicago, IL" },
+  { id: 4, name: "Robert Johnson", email: "robert@example.com", address: "321 Pine St, Houston, TX" },
+  { id: 5, name: "Emily Williams", email: "emily@example.com", address: "654 Cedar St, Phoenix, AZ" },
+  { id: 6, name: "Michael Brown", email: "michael@example.com", address: "987 Maple Ave, Philadelphia, PA" },
+  { id: 7, name: "Sophia Davis", email: "sophia@example.com", address: "159 Birch Rd, San Antonio, TX" },
+  { id: 8, name: "William Miller", email: "william@example.com", address: "753 Willow Ln, San Diego, CA" },
+  { id: 9, name: "Olivia Wilson", email: "olivia@example.com", address: "852 Spruce Dr, Dallas, TX" },
+  { id: 10, name: "James Moore", email: "james@example.com", address: "951 Cherry Blvd, San Jose, CA" },
+  { id: 11, name: "Ava Taylor", email: "ava@example.com", address: "159 Redwood Ct, Austin, TX" },
+  { id: 12, name: "Benjamin Anderson", email: "benjamin@example.com", address: "357 Aspen Way, Jacksonville, FL" },
+  { id: 13, name: "Isabella Thomas", email: "isabella@example.com", address: "468 Magnolia St, Fort Worth, TX" },
+  { id: 14, name: "Ethan Jackson", email: "ethan@example.com", address: "753 Dogwood Ln, Columbus, OH" },
+  { id: 15, name: "Mia White", email: "mia@example.com", address: "852 Palm Ave, Charlotte, NC" },
+  { id: 16, name: "Alexander Harris", email: "alexander@example.com", address: "951 Elm St, Indianapolis, IN" },
+  { id: 17, name: "Charlotte Martin", email: "charlotte@example.com", address: "357 Sycamore Rd, Seattle, WA" },
+  { id: 18, name: "Daniel Thompson", email: "daniel@example.com", address: "468 Walnut St, Denver, CO" },
+  { id: 19, name: "Amelia Garcia", email: "amelia@example.com", address: "753 Cypress Dr, Washington, DC" },
+  { id: 20, name: "Joseph Rodriguez", email: "joseph@example.com", address: "852 Pinecone Ln, Boston, MA" },
+];
+const fakeCompanies = [
+  { id: 1, companyName: "TechNova Solutions", address: "123 Silicon Valley, CA", email: "contact@technova.com", phone: "+1-415-123-4567" },
+  { id: 2, companyName: "BlueWave Technologies", address: "456 Ocean Drive, FL", email: "info@bluewave.com", phone: "+1-305-987-6543" },
+  { id: 3, companyName: "GreenLeaf Enterprises", address: "789 Eco Street, NY", email: "support@greenleaf.com", phone: "+1-212-555-0198" },
+  { id: 4, companyName: "SkyNet Innovations", address: "101 AI Park, TX", email: "ai@skynet.com", phone: "+1-512-789-4561" },
+  { id: 5, companyName: "Quantum Dynamics", address: "258 Quantum Road, NV", email: "hello@quantumd.com", phone: "+1-702-369-8521" },
+  { id: 6, companyName: "Apex FinTech", address: "369 Wall Street, NY", email: "finance@apexft.com", phone: "+1-917-234-6789" },
+  { id: 7, companyName: "CyberSec Solutions", address: "147 Secure Lane, DC", email: "security@cybersec.com", phone: "+1-202-111-2222" },
+  { id: 8, companyName: "CloudMatrix Systems", address: "852 Cloud St, WA", email: "cloud@cloudmatrix.com", phone: "+1-206-555-7890" },
+  { id: 9, companyName: "NextGen Robotics", address: "963 AI Blvd, CA", email: "robots@nextgen.com", phone: "+1-310-876-5432" },
+  { id: 10, companyName: "SolarFlare Energy", address: "741 Green Drive, AZ", email: "solar@solarflare.com", phone: "+1-602-321-9876" },
+  { id: 11, companyName: "FutureWave Analytics", address: "369 Data Ave, MA", email: "analytics@futurewave.com", phone: "+1-617-765-4321" },
+  { id: 12, companyName: "StellarNet Communications", address: "159 Spaceway, TX", email: "contact@stellarnet.com", phone: "+1-832-333-9999" },
+  { id: 13, companyName: "OmniTrade Logistics", address: "753 Supply Chain Rd, IL", email: "logistics@omni-trade.com", phone: "+1-312-444-5678" },
+  { id: 14, companyName: "InnoTech Labs", address: "888 Research Dr, CA", email: "lab@innotech.com", phone: "+1-408-777-8888" },
+  { id: 15, companyName: "NeuroAI Systems", address: "102 Neuro Ave, NY", email: "brain@neuroai.com", phone: "+1-646-222-4545" },
+  { id: 16, companyName: "Omicron Softwares", address: "283 Silicon Alley, CO", email: "software@omicron.com", phone: "+1-720-999-1122" },
+  { id: 17, companyName: "Titanium Hardware", address: "564 Hardware Lane, MI", email: "sales@titaniumhw.com", phone: "+1-313-555-7766" },
+  { id: 18, companyName: "Alpha MedTech", address: "435 Health St, CA", email: "contact@alphamed.com", phone: "+1-323-987-6534" },
+  { id: 19, companyName: "Global Venture Partners", address: "222 Startups Rd, NY", email: "invest@globalventure.com", phone: "+1-212-123-9876" },
+  { id: 20, companyName: "Zenith Aerospace", address: "909 SpaceX Way, FL", email: "aero@zenithaero.com", phone: "+1-407-777-9900" }
+];
+
+
+
+
+const fakeProducts = [
+  { productCode: "P001", productName: "Product 1", rate: "120", expDate: "2025-12-01", mrp: "150", batchNo: "BATCH-001" },
+  { productCode: "P002", productName: "Product 2", rate: "130", expDate: "2026-06-15", mrp: "160", batchNo: "BATCH-002" },
+  { productCode: "P003", productName: "Product 3", rate: "140", expDate: "2027-01-20", mrp: "170", batchNo: "BATCH-003" },
+  { productCode: "P004", productName: "Product 4", rate: "150", expDate: "2027-08-10", mrp: "180", batchNo: "BATCH-004" },
+  { productCode: "P005", productName: "Product 5", rate: "160", expDate: "2028-03-25", mrp: "190", batchNo: "BATCH-005" },
+  { productCode: "P006", productName: "Product 6", rate: "170", expDate: "2028-11-05", mrp: "200", batchNo: "BATCH-006" },
+  { productCode: "P007", productName: "Product 7", rate: "180", expDate: "2029-07-12", mrp: "210", batchNo: "BATCH-007" },
+  { productCode: "P008", productName: "Product 8", rate: "190", expDate: "2030-02-28", mrp: "220", batchNo: "BATCH-008" },
+  { productCode: "P009", productName: "Product 9", rate: "200", expDate: "2030-09-18", mrp: "230", batchNo: "BATCH-009" },
+  { productCode: "P010", productName: "Product 10", rate: "210", expDate: "2031-05-03", mrp: "240", batchNo: "BATCH-010" },
+  { productCode: "P011", productName: "Product 11", rate: "220", expDate: "2031-12-20", mrp: "250", batchNo: "BATCH-011" },
+  { productCode: "P012", productName: "Product 12", rate: "230", expDate: "2032-08-08", mrp: "260", batchNo: "BATCH-012" },
+  { productCode: "P013", productName: "Product 13", rate: "240", expDate: "2033-04-15", mrp: "270", batchNo: "BATCH-013" },
+  { productCode: "P014", productName: "Product 14", rate: "250", expDate: "2033-11-22", mrp: "280", batchNo: "BATCH-014" },
+  { productCode: "P015", productName: "Product 15", rate: "260", expDate: "2034-07-01", mrp: "290", batchNo: "BATCH-015" },
+  { productCode: "P016", productName: "Product 16", rate: "270", expDate: "2035-02-10", mrp: "300", batchNo: "BATCH-016" },
+  { productCode: "P017", productName: "Product 17", rate: "280", expDate: "2035-09-25", mrp: "310", batchNo: "BATCH-017" },
+  { productCode: "P018", productName: "Product 18", rate: "290", expDate: "2036-05-18", mrp: "320", batchNo: "BATCH-018" },
+  { productCode: "P019", productName: "Product 19", rate: "300", expDate: "2037-01-05", mrp: "330", batchNo: "BATCH-019" },
+  { productCode: "P020", productName: "Product 20", rate: "310", expDate: "2037-08-20", mrp: "340", batchNo: "BATCH-020" },
+];
+
+const fakeInvoiceDetails = {
+  1: { invoiceNo: "INV-1001", batchNo: "BATCH-001" },
+  2: { invoiceNo: "INV-1002", batchNo: "BATCH-002" },
+  3: { invoiceNo: "INV-1003", batchNo: "BATCH-003" },
+  4: { invoiceNo: "INV-1004", batchNo: "BATCH-004" },
+  5: { invoiceNo: "INV-1005", batchNo: "BATCH-005" },
+  6: { invoiceNo: "INV-1006", batchNo: "BATCH-006" },
+  7: { invoiceNo: "INV-1007", batchNo: "BATCH-007" },
+  8: { invoiceNo: "INV-1008", batchNo: "BATCH-008" },
+  9: { invoiceNo: "INV-1009", batchNo: "BATCH-009" },
+  10: { invoiceNo: "INV-1010", batchNo: "BATCH-010" },
+  11: { invoiceNo: "INV-1011", batchNo: "BATCH-011" },
+  12: { invoiceNo: "INV-1012", batchNo: "BATCH-012" },
+  13: { invoiceNo: "INV-1013", batchNo: "BATCH-013" },
+  14: { invoiceNo: "INV-1014", batchNo: "BATCH-014" },
+  15: { invoiceNo: "INV-1015", batchNo: "BATCH-015" },
+  16: { invoiceNo: "INV-1016", batchNo: "BATCH-016" },
+  17: { invoiceNo: "INV-1017", batchNo: "BATCH-017" },
+  18: { invoiceNo: "INV-1018", batchNo: "BATCH-018" },
+  19: { invoiceNo: "INV-1019", batchNo: "BATCH-019" },
+  20: { invoiceNo: "INV-1020", batchNo: "BATCH-020" },
+};
+
+export { fakeCustomers, fakeProducts, fakeInvoiceDetails, fakeCompanies };
